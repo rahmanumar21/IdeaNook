@@ -1,0 +1,19 @@
+<div class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-md w-1/2">
+        <h2 class="text-xl font-semibold mb-4">Edit Note</h2>
+        <form (ngSubmit)="saveEdit()" class="space-y-4">
+            <div class="flex flex-col space-y-2">
+                <label for="editedTitle" class="text-sm font-medium">Title</label>
+                <input type="text" id="editedTitle" name="editedTitle" [(ngModel)]="editingNote.title" class="form-input rounded-md" placeholder="Title" required>
+            </div>
+            <div class="flex flex-col space-y-2">
+                <label for="editedContent" class="text-sm font-medium">Content</label>
+                <textarea id="editedContent" name="editedContent" [(ngModel)]="editingNote.content" class="form-textarea rounded-md" placeholder="Content" required></textarea>
+            </div>
+            <div class="flex justify-end space-x-2">
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Save Changes</button>
+                <button type="button" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400" (click)="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
